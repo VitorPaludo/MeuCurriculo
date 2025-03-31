@@ -1,95 +1,181 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
+    <title>Vitor Paludo - Meu Site</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Bootstrap CSS v5.2.1 -->
+    <!-- Bootstrap CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
         crossorigin="anonymous"
     />
+
+    <!-- Custom CSS -->
+    <style>
+        /* Estilo para a barra lateral */
+        #sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: rgb(83, 82, 82);
+            color: white;
+            padding: 20px;
+        }
+
+        #sidebar h1 {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #sidebar .nav-link {
+            color: white;
+            padding: 10px 0;
+            text-align: left;
+        }
+
+        #sidebar .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+        }
+
+        #profile-picture {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Torna a foto arredondada */
+            object-fit: cover; /* Garante que a imagem se encaixe no espaço */
+            margin-bottom: 15px;
+        }
+
+        #content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        section {
+            margin-top: 90px;
+        }
+
+        .linkedin-icon {
+            display: block;
+            margin: 0 auto;
+            width: 30px;
+            height: 30px;
+        }
+
+        .confirmation-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-
-    <header style="background-color: rgb(0, 0, 0);">
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: black;">
-            <div class="container-fluid d-flex flex-column align-items-center">
-                <h1 class="text-center text-white">Vitor Paludo</h1>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#sobre-mim">Sobre Mim</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#projetos">Projetos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#contato">Contato</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Barra lateral fixa -->
+    <div id="sidebar">
+        <!-- Foto arredondada acima do nome -->
+        <img src="assets/O.jpg" alt="Minha Foto" id="profile-picture">
+        <h1>Vitor Paludo</h1>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="#sobre-mim">Sobre Mim</a>
+            <a class="nav-link" href="#projetos">Projetos</a>
+            <a class="nav-link" href="#contato">Contato</a>
         </nav>
-    </header>    
-
-    <section id="sobre-mim" class="sobre-mim">
-        <img src="assets/exemplo-logo-73-8809.png" alt="Foto de perfil" style="width: 150px; border-radius: 50%; display: block; margin: 0 auto;">
-        <p style="text-align: center;">Olá, meu nome é Vitor Paludo e este é meu site</p>
-    </section>
-
-    <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" href="https://github.com/VitorPaludo/VitorPaludoSQL">Projeto 1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/VitorPaludo/Vitor_Financeiro">Projeto 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/VitorPaludo/Exer_Estoque">Projeto 3</a>
-        </li>
-      </ul>
-
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Endereço de email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-          <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+        <!-- Footer na barra lateral -->
+        <div class="footer text-center">
+            <p class="mt-2">Redes Sociais:</p>
+            <a href="https://www.linkedin.com/in/vitor-paludo-356811357/" target="_blank">
+                <img src="assets/OIP.jpg" alt="LinkedIn" class="linkedin-icon">
+            </a>
+            <p class="mt-2">© Copyright Vitor Paludo</p>
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Senha</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </form>  
+    </div>
 
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" href="https://www.linkedin.com/in/vitor-paludo-356811357/">Linkedin</a>
-        </li>
-      </ul>
+    <div id="content">
+        <main>
+            <!-- Sobre Mim Section -->
+            <section id="sobre-mim" class="sobre-mim mt-4">
+                <h2 class="text-center">Sobre Mim</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center">
+                        <img src="assets/O.jpg" alt="Foto de perfil" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="col-md-8">
+                        <p>Eu sou Vitor Paludo, estou cursando Desenvolvimento de Sistemas no SENAI e tenho o objetivo de seguir carreira nessa área. Tenho uma paixão por tecnologia e inovação, e estou determinado a transformar ideias em soluções práticas e impactantes, construindo uma trajetória profissional sólida no desenvolvimento de sistemas.</p>
+                        <p><strong>Data Nascimento:</strong> 13/01/2008</p>
+                        <p><strong>Cidade:</strong> Joinville, Santa Catarina, BR</p>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Projetos Section -->
+            <section id="projetos" class="mt-4">
+                <h2 class="text-center">Projetos</h2>
+                <ul class="nav flex-column align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://github.com/VitorPaludo/VitorPaludoSQL">Estoque</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/VitorPaludo/Vitor_Financeiro">Banco De Dados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/VitorPaludo/Exer_Estoque">Atividade Em Banco De Dados</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Contato Section -->
+            <section id="contato" class="mt-4">
+                <h2 class="text-center">Contato</h2>
+                <form class="text-center" id="contactForm">
+                    <div class="form-group mb-3">
+                        <label for="exampleInputEmail1">Endereço de email</label>
+                        <input type="email" class="form-control w-50 mx-auto" id="exampleInputEmail1" placeholder="Seu email" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="exampleInputPassword1">Senha</label>
+                        <input type="password" class="form-control w-50 mx-auto" id="exampleInputPassword1" placeholder="Senha" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="messageInput">Mensagem</label>
+                        <textarea class="form-control w-50 mx-auto" id="messageInput" rows="4" placeholder="Escreva sua mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+                <p class="confirmation-message" id="confirmationMessage">Sua mensagem foi enviada com sucesso!</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"
+        const contactForm = document.getElementById('contactForm');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Evita o envio real do formulário
+            confirmationMessage.style.display = 'block'; // Mostra a mensagem de confirmação
+            contactForm.reset(); // Limpa os campos do formulário
+
+            // Faz a mensagem desaparecer depois de 30 segundos
+            setTimeout(() => {
+                confirmationMessage.style.display = 'none';
+            }, 30000);
+        });
     </script>
 
-    <script>
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"
-    </script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
