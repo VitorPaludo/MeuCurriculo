@@ -15,6 +15,20 @@
 
     <!-- Custom CSS -->
     <style>
+        /* Estilos gerais */
+        #content {
+            padding: 20px;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .text-success, .text-danger {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
         /* Estilo para a barra lateral */
         #sidebar {
             width: 250px;
@@ -88,6 +102,7 @@
         <h1>Vitor Paludo</h1>
         <nav class="nav flex-column">
             <a class="nav-link" href="#sobre-mim">Sobre Mim</a>
+            <a class="nav-link" href="#formacao">Formação Acadêmica</a>
             <a class="nav-link" href="#projetos">Projetos</a>
             <a class="nav-link" href="#contato">Contato</a>
         </nav>
@@ -118,6 +133,19 @@
                 </div>
             </section>
 
+            <!-- Formação Acadêmica -->
+            <section id="formacao" class="mt-4 text-center">
+                <h2>Formação Acadêmica</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <p><strong>Curso:</strong> Desenvolvimento de Sistemas</p>
+                        <p><strong>Instituição:</strong> SENAI SUL - Joinville, SC</p>
+                        <p><strong>Conclusão:</strong> Em andamento</p>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+    
             <!-- Projetos Section -->
             <section id="projetos" class="mt-4">
                 <h2 class="text-center">Projetos</h2>
@@ -134,48 +162,35 @@
                 </ul>
             </section>
 
-            <!-- Contato Section -->
             <section id="contato" class="mt-4">
                 <h2 class="text-center">Contato</h2>
-                <form class="text-center" id="contactForm">
+                <form class="text-center" id="contact-form"> <!-- ID atualizado -->
                     <div class="form-group mb-3">
                         <label for="exampleInputEmail1">Endereço de email</label>
-                        <input type="email" class="form-control w-50 mx-auto" id="exampleInputEmail1" placeholder="Seu email" required>
+                        <input type="email" class="form-control w-75 mx-auto" id="exampleInputEmail1" placeholder="Seu email" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="exampleInputPassword1">Senha</label>
-                        <input type="password" class="form-control w-50 mx-auto" id="exampleInputPassword1" placeholder="Senha" required>
+                        <input type="password" class="form-control w-75 mx-auto" id="exampleInputPassword1" placeholder="Senha" required>
                     </div>
                     <div class="form-group mb-3">
                         <label for="messageInput">Mensagem</label>
-                        <textarea class="form-control w-50 mx-auto" id="messageInput" rows="4" placeholder="Escreva sua mensagem" required></textarea>
+                        <textarea class="form-control w-75 mx-auto" id="messageInput" rows="5" placeholder="Escreva sua mensagem" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar</button>
+            
+                    <!-- Mensagens de confirmação -->
+                    <div class="mt-3">
+                        <p id="success-message" class="text-success d-none">Sua mensagem foi enviada com sucesso!</p>
+                        <p id="error-message" class="text-danger d-none">Ocorreu um erro ao enviar sua mensagem.</p>
+                    </div>
                 </form>
-                <p class="confirmation-message" id="confirmationMessage">Sua mensagem foi enviada com sucesso!</p>
             </section>
-        </main>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        const contactForm = document.getElementById('contactForm');
-        const confirmationMessage = document.getElementById('confirmationMessage');
-
-        contactForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Evita o envio real do formulário
-            confirmationMessage.style.display = 'block'; // Mostra a mensagem de confirmação
-            contactForm.reset(); // Limpa os campos do formulário
-
-            // Faz a mensagem desaparecer depois de 30 segundos
-            setTimeout(() => {
-                confirmationMessage.style.display = 'none';
-            }, 30000);
-        });
-    </script>
-
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+            
+            
+            <!-- JavaScript -->
+            <script src="script.js"></script>                   
+</main>
+</div>
 </body>
 </html>
